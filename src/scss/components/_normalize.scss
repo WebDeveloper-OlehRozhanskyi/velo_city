@@ -1,0 +1,121 @@
+html {
+ box-sizing: border-box;
+ height: 100%;
+ scroll-behavior: smooth;
+ scrollbar-gutter: stable;
+}
+
+*,
+*::before,
+*::after {
+ box-sizing: inherit;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+ appearance: none;
+}
+
+:where([fill]:not([fill='none'], [fill^='url'])) {
+ fill: currentcolor;
+}
+
+:where([stroke]:not([stroke='none'], [stroke^='url'])) {
+ stroke: currentcolor;
+}
+
+svg * {
+ transition-property: fill, stroke;
+}
+
+@media (prefers-reduced-motion: reduce) {
+ * {
+  transition-duration: 0.01ms !important;
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+ }
+}
+
+@mixin image {
+ display: block;
+ max-width: 100%;
+ height: auto;
+ @content;
+}
+
+@mixin list {
+ padding-left: 0;
+ list-style: none;
+ margin-block: 0;
+ @content;
+}
+
+@mixin button {
+ font-size: inherit;
+ color: inherit;
+ font-family: inherit;
+ cursor: pointer;
+ @content;
+}
+
+@mixin margin-block {
+ margin-block: 0;
+ @content;
+}
+
+@mixin link {
+ display: block;
+ color: inherit;
+ text-decoration: none;
+ @content;
+}
+
+@mixin form {
+ font-size: inherit;
+ color: inherit;
+ font-family: inherit;
+ @content;
+}
+
+/*
+:where(ul, ol):where([class]) {
+	padding-left: 0;
+}
+:where(blockquote, figure):where([class]) {
+	margin: 0;
+}
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+	margin-block: 0;
+}
+p {
+	--paragraphMarginBottom: 24px;
+	margin-block: 0;
+}
+p:where(:not([class]):not(:last-child)) {
+	margin-bottom: var(--paragraphMarginBottom);
+}
+:where(dd[class]) {
+	margin-left: 0;
+}
+:where(fieldset[class]) {
+	margin-left: 0;
+	padding: 0;
+	border: none;
+}
+:where(ul[class]) {
+	list-style: none;
+}
+:where(button):where([class]) {
+	color: inherit;
+	font-size: inherit;
+}
+input,
+textarea,
+select,
+button {
+	font-family: inherit;
+}
+*/

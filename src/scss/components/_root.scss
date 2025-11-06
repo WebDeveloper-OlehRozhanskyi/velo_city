@@ -1,0 +1,25 @@
+@use 'functions' as *;
+@use 'variables' as *;
+
+:root {
+ --white: #fff;
+ --black: #000;
+ --text-color: #888;
+ --brand-color: #ffd11a;
+ --background: #fff;
+ --background-second: #1a1a1a;
+ --font-family: 'Montserrat';
+ --font-family-accent: 'Kumbh Sans';
+ --padding-inline: #{rem(80)};
+ --gap-section: #{rem(64)};
+ --gap-content: #{rem(32)};
+ --transition: 0.3s;
+
+ @media (width <= rem($l)) {
+  --padding-inline: #{rem(40)};
+ }
+
+ @media (width <= rem($bm)) {
+  --padding-inline: #{rem(16)};
+ }
+}
