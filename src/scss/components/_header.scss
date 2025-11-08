@@ -25,17 +25,36 @@
  &__container {
   @include container;
 
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: rem(12);
   min-height: rem(77);
-  transition: all var(--transition);
+  transition:
+   min-height var(--transition),
+   background-color var(--transition),
+   border-radius var(--transition);
+
+  &::before {
+   position: absolute;
+   right: 80;
+   bottom: 0;
+   left: 80;
+   width: calc(100% - var(--padding-inline) * 2);
+   height: 1px;
+   background-color: #ffcc;
+   content: '';
+  }
 
   &.header-scrolling {
    min-height: rem(60);
    background-color: rgb(116 97 90 / 80%);
    border-radius: 0 0 20px 20px;
+
+   &::before {
+    display: none;
+   }
   }
 
   @include l {
@@ -54,20 +73,22 @@
 
   font-weight: 600;
   line-height: 0;
-  color: var(--white);
   text-decoration: none;
   white-space: nowrap;
+  color: var(--white);
  }
 
  // .header__input-search
  &__input-search {
+  @include input-search;
+
   min-height: rem(44);
-  color: var(--white);
-  border: 1px solid var(--white);
-  background-color: transparent;
-  border-radius: 20px;
-  font-family: inherit;
   padding-inline: 30px;
+  font-family: inherit;
+  color: var(--white);
+  background-color: transparent;
+  border: 1px solid var(--white);
+  border-radius: 20px;
 
   &::placeholder {
    font-size: rem(16);
@@ -89,8 +110,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: rem(150) 0 rem(30);
   overflow-y: auto;
+  padding: rem(150) 0 rem(30);
   transform: translateX(100%);
   transition: transform var(--transition);
  }
@@ -101,18 +122,24 @@
 
  // .menu__list
  &__list {
+  @include list;
+
   display: flex;
   align-items: center;
-  padding-left: 0;
-  list-style: none;
-  margin-block: 0;
 
   @include m {
    flex-flow: column nowrap;
    justify-content: flex-start;
    align-items: center;
-   margin-bottom: rem(30);
    row-gap: rem(32);
+   margin-bottom: rem(30);
+  }
+
+  // .menu__item
+  &-item {
+   &:not(:last-child) {
+    padding-right: var(--gap-content);
+   }
   }
 
   // .menu__link
@@ -121,14 +148,13 @@
    display: block;
    font-size: rem(16);
    line-height: 0;
+   text-transform: capitalize;
+   text-decoration: none;
+   white-space: nowrap;
    color: var(--white);
    border: rem(1) solid transparent;
    border-radius: rem(10);
-   white-space: nowrap;
-   text-transform: capitalize;
-   text-decoration: none;
    padding-block: rem(13);
-   padding-inline: rem(19);
 
    &::before {
     position: absolute;
@@ -149,11 +175,11 @@
    }
 
    &.is-active {
+    padding-inline: rem(23);
     font-weight: 500;
     color: var(--white);
-    border: rem(1) solid var(--color-dark-20);
     background-color: var(--background);
-    padding-inline: rem(23);
+    border: rem(1) solid var(--color-dark-20);
    }
 
    @include l {

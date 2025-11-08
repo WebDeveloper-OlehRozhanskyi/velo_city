@@ -77,8 +77,8 @@
 
 @mixin container {
  max-width: calc(#{rem($desktop)} + var(--padding-inline) * 2);
- margin-inline: auto;
  padding-inline: var(--padding-inline);
+ margin-inline: auto;
  @content;
 }
 
@@ -124,28 +124,6 @@
  );
 }
 
-@mixin resize-img(
- $max: 415,
- $min: 240,
- $max-viewport: $viewport,
- $min-viewport: $bm
-) {
- $max-viewport-width: $max-viewport;
- $min-viewport-width: $min-viewport;
- $max-size: math.div($max, 16);
- $min-size: math.div($min, 16);
- $max-width: math.div($max-viewport-width, 16);
- $min-width: math.div($min-viewport-width, 16);
- $slope: math.div(($max-size - $min-size), ($max-width - $min-width));
- $y-axis-intersection: -$min-width * $slope + $min-size;
-
- min-height: clamp(
-  #{$min-size * 1rem},
-  #{$y-axis-intersection * 1rem} + #{$slope * 100vw},
-  #{$max-size * 1rem}
- );
-}
-
 @mixin bg-image-set($base, $ext: 'jpg') {
  background-image: url('#{$base}.#{$ext}');
  background-image: image-set(
@@ -157,9 +135,9 @@
   url('#{$base}@2x.#{$ext}') type('image/#{if($ext == "png", "png", "jpeg")}')
    2x
  );
- background-size: cover;
  background-position: center;
  background-repeat: no-repeat;
+ background-size: cover;
 }
 
 /*

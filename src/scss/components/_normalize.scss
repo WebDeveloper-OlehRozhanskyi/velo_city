@@ -1,3 +1,5 @@
+@use 'root' as *;
+
 html {
  box-sizing: border-box;
  height: 100%;
@@ -9,25 +11,6 @@ html {
 *::before,
 *::after {
  box-sizing: inherit;
-}
-
-input[type='search']::-webkit-search-decoration,
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-results-button,
-input[type='search']::-webkit-search-results-decoration {
- appearance: none;
-}
-
-:where([fill]:not([fill='none'], [fill^='url'])) {
- fill: currentcolor;
-}
-
-:where([stroke]:not([stroke='none'], [stroke^='url'])) {
- stroke: currentcolor;
-}
-
-svg * {
- transition-property: fill, stroke;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -46,17 +29,24 @@ svg * {
  @content;
 }
 
+@mixin svg-color {
+ fill: currentcolor;
+ stroke: currentcolor;
+ transition-property: fill, stroke;
+ @content;
+}
+
 @mixin list {
  padding-left: 0;
- list-style: none;
  margin-block: 0;
+ list-style: none;
  @content;
 }
 
 @mixin button {
+ font-family: inherit;
  font-size: inherit;
  color: inherit;
- font-family: inherit;
  cursor: pointer;
  @content;
 }
@@ -68,16 +58,26 @@ svg * {
 
 @mixin link {
  display: block;
- color: inherit;
  text-decoration: none;
+ color: inherit;
  @content;
 }
 
 @mixin form {
+ font-family: inherit;
  font-size: inherit;
  color: inherit;
- font-family: inherit;
  @content;
+}
+
+@mixin input-search {
+ ::-webkit-search-decoration,
+ ::-webkit-search-cancel-button,
+ ::-webkit-search-results-button,
+ ::-webkit-search-results-decoration {
+  appearance: none;
+  @content;
+ }
 }
 
 /*
@@ -119,3 +119,11 @@ button {
 	font-family: inherit;
 }
 */
+
+/* :where([fill]:not([fill='none'], [fill^='url'])) {
+ fill: currentcolor;
+}
+
+:where([stroke]:not([stroke='none'], [stroke^='url'])) {
+ stroke: currentcolor;
+} */

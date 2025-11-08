@@ -2,27 +2,27 @@
 
 html {
  scroll-padding-top: rem(60);
- scrollbar-width: thin; /* Може бути auto, thin або none */
  scrollbar-color: var(--brand-color) var(--background-second);
+ scrollbar-width: thin; /* Може бути auto, thin або none */
 }
 
 body {
  position: relative;
+ overflow-x: clip;
  min-height: 100vh;
  margin: 0;
  padding: 0;
+ font-family: var(--font-family), serif;
  font-size: rem(16);
  font-weight: 400;
  line-height: 1.5;
  color: var(--text-color);
- border: 0;
- overflow-x: clip;
- font-family: var(--font-family), serif;
  background-color: var(--background);
+ border: 0;
 
  &.menu-active {
-  padding-right: 7px;
   overflow-y: hidden;
+  padding-right: 7px;
 
   @include m {
    padding-right: 4px;
@@ -42,14 +42,14 @@ body {
 
 .visually-hidden {
  position: absolute !important;
+ overflow: hidden !important;
+ clip-path: inset(50%) !important;
  width: 1px !important;
  height: 1px !important;
  margin: -1px !important;
  padding: 0 !important;
- overflow: hidden !important;
  white-space: nowrap !important;
  border: 0 !important;
- clip-path: inset(50%) !important;
 
  // prettier-ignore
  clip: rect(0 0 0 0)!important; /* stylelint-disable-line property-no-deprecated */

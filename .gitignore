@@ -4,4 +4,4 @@
 dist
 node_modules
 project_info
-plugins
+workspace.code-workspace
