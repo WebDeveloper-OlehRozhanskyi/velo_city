@@ -4,6 +4,15 @@
  @return math.div($n, 16) * 1rem;
 }
 
+@function fluid($min, $max, $minWidth, $maxWidth, $base: 16) {
+ $min-rem: $min / $base * 1rem;
+ $max-rem: $max / $base * 1rem;
+ $slope: ($max - $min) / ($maxWidth - $minWidth) * 100;
+ $intercept: ($min - ($slope * $minWidth / 100)) / $base;
+
+ @return clamp(#{$min-rem}, #{$intercept}rem + #{$slope}vw, #{$max-rem});
+}
+
 /*
 @function vwc($n) {
 	@return calc($n $m * 100vw);

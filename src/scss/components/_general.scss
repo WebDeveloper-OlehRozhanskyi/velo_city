@@ -9,14 +9,22 @@
  color: var(--black);
 }
 
-.product-card {
- display: flex;
- flex-direction: column;
- row-gap: rem(12);
+.discount__content,
+.catalog__content {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(rem(280), 1fr));
+ gap: rem(56) rem(32);
 
  @include ipad {
-  padding-bottom: rem(22);
+  gap: var(--gap-content);
  }
+}
+
+.product-card {
+ display: grid;
+ grid-template-rows: auto 1fr 1fr auto;
+ row-gap: rem(12);
+ text-decoration: none;
 
  // .product-card__img
  &__img {
@@ -40,6 +48,7 @@
   font-size: 14px;
   line-height: 1.2;
   margin-block: 0;
+  color: var(--text-color);
  }
 
  // .product-card__price-block
@@ -59,6 +68,7 @@
  // .product-card__price
  &__price {
   text-decoration: line-through;
+  color: var(--text-color);
  }
 }
 

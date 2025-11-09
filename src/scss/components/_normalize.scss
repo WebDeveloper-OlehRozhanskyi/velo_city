@@ -70,14 +70,11 @@ html {
  @content;
 }
 
-@mixin input-search {
- ::-webkit-search-decoration,
- ::-webkit-search-cancel-button,
- ::-webkit-search-results-button,
- ::-webkit-search-results-decoration {
-  appearance: none;
-  @content;
- }
+::-webkit-search-decoration,
+::-webkit-search-cancel-button,
+::-webkit-search-results-button,
+::-webkit-search-results-decoration {
+ appearance: none;
 }
 
 /*

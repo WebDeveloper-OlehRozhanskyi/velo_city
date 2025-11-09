@@ -29,6 +29,16 @@
       class="header__input-search"
       type="search"
       placeholder="Поиск" />
+     <button class="header__input-search-button" type="button">
+      <svg
+       role="img"
+       aria-label="search"
+       class="header__input-search-icon"
+       width="20"
+       height="20">
+       <use xlink:href="#icon-search"></use>
+      </svg>
+     </button>
      <nav class="header__menu menu">
       <ul class="menu__list">
        <li class="menu__list-item">
@@ -39,6 +49,13 @@
        </li>
       </ul>
      </nav>
+     <button
+      type="button"
+      class="burger-btn"
+      aria-label="open menu"
+      aria-expanded="false">
+      <span></span>
+     </button>
     </div>
    </header>
    <main class="main">
@@ -81,7 +98,7 @@
      <div class="discount__container">
       <h2 class="discount__title section-title">Акции</h2>
       <div class="discount__content">
-       <article class="discount__product-card product-card">
+       <a class="discount__product-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/discount/product_1.jpg"
@@ -98,8 +115,8 @@
          <span class="product-card__new-price">16 673 руб.</span>
          <span class="product-card__price">25 799 руб.</span>
         </div>
-       </article>
-       <article class="discount__product-card product-card">
+       </a>
+       <a class="discount__product-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/discount/product_2.jpg"
@@ -116,8 +133,8 @@
          <span class="product-card__new-price">17 340 руб.</span>
          <span class="product-card__price">29 400 руб.</span>
         </div>
-       </article>
-       <article class="discount__product-card product-card">
+       </a>
+       <a class="discount__product-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/discount/product_3.jpg"
@@ -133,7 +150,7 @@
          <span class="product-card__new-price">22 990 руб.</span>
          <span class="product-card__price">29 890 руб.</span>
         </div>
-       </article>
+       </a>
       </div>
      </div>
     </section>
@@ -143,7 +160,7 @@
        Каталог велосипедов и аксессуаров
       </h2>
       <div class="catalog__content">
-       <article class="catalog__content-card product-card">
+       <a class="catalog__content-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/catalog/product_1.jpg"
@@ -157,8 +174,8 @@
         <div class="product-card__price-block">
          <span class="product-card__new-price">31 762 руб.</span>
         </div>
-       </article>
-       <article class="catalog__content-card product-card">
+       </a>
+       <a class="catalog__content-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/catalog/product_2.jpg"
@@ -173,8 +190,8 @@
         <div class="product-card__price-block">
          <span class="product-card__new-price">12 686 руб.</span>
         </div>
-       </article>
-       <article class="catalog__content-card product-card">
+       </a>
+       <a class="catalog__content-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/catalog/product_3.jpg"
@@ -189,8 +206,8 @@
         <div class="product-card__price-block">
          <span class="product-card__new-price">26 559 руб.</span>
         </div>
-       </article>
-       <article class="catalog__content-card product-card">
+       </a>
+       <a class="catalog__content-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/catalog/product_4.jpg"
@@ -204,8 +221,8 @@
         <div class="product-card__price-block">
          <span class="product-card__new-price">2 499 руб.</span>
         </div>
-       </article>
-       <article class="catalog__content-card product-card">
+       </a>
+       <a class="catalog__content-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/catalog/product_5.jpg"
@@ -220,8 +237,8 @@
         <div class="product-card__price-block">
          <span class="product-card__new-price">1 990 руб.</span>
         </div>
-       </article>
-       <article class="catalog__product-card product-card">
+       </a>
+       <a class="catalog__product-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/catalog/product_6.jpg"
@@ -235,8 +252,11 @@
         <div class="product-card__price-block">
          <span class="product-card__new-price">3 440 руб.</span>
         </div>
-       </article>
+       </a>
       </div>
+      <a class="catalog__link" href="#!" role="link" aria-disabled="true">
+       Перейти в каталог
+      </a>
      </div>
     </section>
    </main>

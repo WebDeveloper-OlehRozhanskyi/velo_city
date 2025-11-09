@@ -34,7 +34,7 @@
  // .footer__wrap
  &__wrap {
   display: flex;
-  column-gap: rem(129);
+  column-gap: fluid(80, 129, 320, $ipad);
   line-height: 1;
  }
 
@@ -88,7 +88,7 @@
   // .footer__contact-link
   &-link {
    display: block;
-   line-height: 0;
+   line-height: 1;
   }
 
   // .footer__contact-ico
