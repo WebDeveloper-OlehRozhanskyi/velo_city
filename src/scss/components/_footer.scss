@@ -3,7 +3,7 @@
 .footer {
  padding-top: var(--gap-content);
  padding-bottom: var(--gap-section);
- background: #f7f6f6;
+ background-color: #f7f6f6;
 
  // .footer__container
  &__container {
@@ -21,10 +21,13 @@
 
  // .footer__logo
  &__logo {
-  font-size: 36px;
+  font-size: rem(36);
   font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
   white-space: nowrap;
   color: var(--black);
+  align-self: start;
 
   @include t {
    display: none;
@@ -47,7 +50,7 @@
   // .footer__menu-title
   &-title {
    margin-block: 0;
-   font-size: 24px;
+   font-size: rem(24);
    font-weight: 500;
    color: var(--black);
   }
@@ -71,7 +74,7 @@
   // .footer__contact-title
   &-title {
    margin-block: 0;
-   font-size: 24px;
+   font-size: rem(24);
    font-weight: 500;
    color: var(--black);
   }
@@ -79,7 +82,7 @@
   // .footer__contact-social-list
   &-social-list {
    display: flex;
-   column-gap: rem(20);
+   justify-content: space-between;
    padding-left: 0;
    list-style: none;
    margin-block: 0;
@@ -96,6 +99,8 @@
    @include svg-color;
 
    display: block;
+   width: rem(24);
+   height: rem(20);
    color: inherit;
 
    &:hover {
@@ -123,7 +128,7 @@
    min-height: rem(40);
    font-family: inherit;
    background: var(--white);
-   border: 1px solid #c4c4c4;
+   border: rem(1) solid #c4c4c4;
    border-radius: rem(16);
    padding-inline: rem(20);
 
@@ -140,7 +145,7 @@
    font-size: rem(12);
    background: #ded7d769;
    border: none;
-   border-radius: 16px;
+   border-radius: rem(16);
    cursor: pointer;
    padding-inline: 0;
   }

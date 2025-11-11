@@ -25,12 +25,12 @@
   position: relative;
   display: none;
   flex-direction: column;
-  row-gap: 32px;
+  row-gap: rem(32);
   max-width: 90%;
-  padding: 32px 24px;
+  padding: rem(32) rem(24);
   background-color: var(--bg);
-  border: 2px solid var(--brand-color);
-  border-radius: 20px;
+  border: rem(2) solid var(--brand-color);
+  border-radius: rem(20);
 
   &--visible {
    display: flex;
@@ -47,7 +47,7 @@
  &__title {
   @include margin-block;
 
-  font-size: 32px;
+  font-size: rem(32);
   font-weight: 400;
  }
 
@@ -60,7 +60,7 @@
   @include hover;
 
   &::before {
-   bottom: -5px;
+   bottom: rem(-5);
   }
  }
 }
@@ -73,19 +73,19 @@
  &__input {
   @include input;
 
-  min-height: 59px;
-  margin-bottom: 20px;
-  padding: 12px;
+  min-height: rem(59);
+  margin-bottom: rem(20);
+  padding: rem(12);
   color: #000;
-  border: 1px solid var(--black);
-  border-radius: 32px;
+  border: rem(1) solid var(--black);
+  border-radius: rem(32);
  }
 
  // .form__btn
  &__btn {
-  margin-bottom: 20px;
-  padding-right: 32px;
-  border: 2px solid transparent;
+  margin-bottom: rem(20);
+  padding-right: rem(32);
+  border: rem(2) solid transparent;
   transition: all var(--transition);
 
   &::before {
@@ -95,7 +95,7 @@
   &:hover {
    @media (any-hover) {
     background-color: var(--bg);
-    border: 2px solid var(--brand-color);
+    border: rem(2) solid var(--brand-color);
    }
   }
  }
@@ -105,11 +105,11 @@
  @include button;
 
  position: absolute;
- top: 5px;
- right: 5px;
- width: 44px;
- height: 44px;
- padding: 12px;
+ top: rem(5);
+ right: rem(5);
+ width: rem(44);
+ height: rem(44);
+ padding: rem(12);
  background-color: transparent;
  border: none;
  cursor: pointer;
@@ -117,21 +117,21 @@
  &::before,
  &::after {
   position: absolute;
-  right: 7px;
+  right: rem(7);
   display: block;
-  width: 30px;
-  height: 2px;
+  width: rem(30);
+  height: rem(2);
   background-color: var(--brand-color);
   content: '';
  }
 
  &::before {
-  top: calc(50% - 1px);
+  top: calc(50% - rem(1));
   transform: rotate(-45deg);
  }
 
  &::after {
-  bottom: calc(50% - 1px);
+  bottom: calc(50% - rem(1));
   transform: rotate(45deg);
  }
 }

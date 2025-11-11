@@ -20,26 +20,32 @@
  <body>
   <div class="wrapper">
    <header class="header">
-    <div class="header__container">
-     <a class="header__logo" href="index.html" role="link" aria-disabled="true">
-      Вело-сити
-     </a>
-     <input
-      id="header-input-search"
-      class="header__input-search"
-      type="search"
-      placeholder="Поиск" />
-     <button class="header__input-search-button" type="button">
-      <svg
-       role="img"
-       aria-label="search"
-       class="header__input-search-icon"
-       width="20"
-       height="20">
-       <use xlink:href="#icon-search"></use>
-      </svg>
-     </button>
-     <nav class="header__menu menu">
+    <div class="header__container header__container--home">
+     <a class="header__logo" href="index.html" aria-current="page">Вело-сити</a>
+     <form class="header__search" role="search" method="get">
+      <label class="visually-hidden" for="header-input-search">
+       Поиск по сайту
+      </label>
+      <input
+       id="header-input-search"
+       class="header__input-search"
+       name="q"
+       type="search"
+       placeholder="Поиск" />
+      <button
+       class="header__input-search-button"
+       type="submit"
+       aria-label="Поиск по сайту">
+       <svg
+        class="header__input-search-icon"
+        width="24"
+        height="24"
+        aria-hidden="true">
+        <use href="#icon-search"></use>
+       </svg>
+      </button>
+     </form>
+     <nav id="header-menu" class="header__menu menu" aria-label="Основное меню">
       <ul class="menu__list">
        <li class="menu__list-item">
         <a class="menu__list-link" href="catalog.html">Каталог</a>
@@ -52,8 +58,9 @@
      <button
       type="button"
       class="burger-btn"
-      aria-label="open menu"
-      aria-expanded="false">
+      aria-label="Открыть меню"
+      aria-expanded="false"
+      aria-controls="header-menu">
       <span></span>
      </button>
     </div>
@@ -63,13 +70,7 @@
      <div class="banner__container">
       <h1 class="banner__title">Велосипед как украшение жизни</h1>
       <span class="banner__slogan">Крути педали к своему здоровью</span>
-      <a
-       class="banner__catalog-link"
-       href="catalog.html"
-       role="link"
-       aria-disabled="true">
-       Перейти в каталог
-      </a>
+      <a class="banner__catalog-link" href="catalog.html">Перейти в каталог</a>
      </div>
     </section>
     <section class="main__for for">
@@ -104,7 +105,8 @@
          src="./src/images/discount/product_1.jpg"
          alt="Велосипед GTI"
          width="380"
-         height="250" />
+         height="250"
+         loading="lazy" />
 
         <h3 class="product-card__title">Велосипед GTI</h3>
         <p class="product-card__text">
@@ -122,7 +124,8 @@
          src="./src/images/discount/product_2.jpg"
          alt="Велосипед Amsterdam"
          width="380"
-         height="250" />
+         height="250"
+         loading="lazy" />
 
         <h3 class="product-card__title">Велосипед Amsterdam</h3>
         <p class="product-card__text">
@@ -140,7 +143,8 @@
          src="./src/images/discount/product_3.jpg"
          alt="Велосипед GESTALT"
          width="380"
-         height="250" />
+         height="250"
+         loading="lazy" />
 
         <h3 class="product-card__title">Велосипед GESTALT</h3>
         <p class="product-card__text">
@@ -160,13 +164,14 @@
        Каталог велосипедов и аксессуаров
       </h2>
       <div class="catalog__content">
-       <a class="catalog__content-card product-card" href="#!">
+       <a class="catalog__product-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/catalog/product_1.jpg"
-         alt="Комплект фонарей BBB BLS"
+         alt="DeWolf Горный велосипед"
          width="380"
-         height="250" />
+         height="250"
+         loading="lazy" />
         <h3 class="product-card__title">DeWolf Горный велосипед</h3>
         <p class="product-card__text">
          Велосипед DWF222753-18, 27.5, 2022. Яркая внешность и дерзкий характер.
@@ -175,13 +180,14 @@
          <span class="product-card__new-price">31 762 руб.</span>
         </div>
        </a>
-       <a class="catalog__content-card product-card" href="#!">
+       <a class="catalog__product-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/catalog/product_2.jpg"
-         alt="Комплект фонарей BBB BLS"
+         alt="GTI Велосипед детский"
          width="380"
-         height="250" />
+         height="250"
+         loading="lazy" />
         <h3 class="product-card__title">GTI Велосипед детский</h3>
         <p class="product-card__text">
          Велосипед GTI подходит для детей, начинающих осваивать езду на
@@ -191,13 +197,14 @@
          <span class="product-card__new-price">12 686 руб.</span>
         </div>
        </a>
-       <a class="catalog__content-card product-card" href="#!">
+       <a class="catalog__product-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/catalog/product_3.jpg"
-         alt="Комплект фонарей BBB BLS"
+         alt="Liv Велосипед Городской"
          width="380"
-         height="250" />
+         height="250"
+         loading="lazy" />
         <h3 class="product-card__title">Liv Велосипед Городской</h3>
         <p class="product-card__text">
          Качественный стильный велосипед предназначен для девушек, следящих за
@@ -207,13 +214,14 @@
          <span class="product-card__new-price">26 559 руб.</span>
         </div>
        </a>
-       <a class="catalog__content-card product-card" href="#!">
+       <a class="catalog__product-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/catalog/product_4.jpg"
-         alt="Комплект фонарей BBB BLS"
+         alt="Держатель Venzo"
          width="380"
-         height="250" />
+         height="250"
+         loading="lazy" />
         <h3 class="product-card__title">Держатель Venzo</h3>
         <p class="product-card__text">
          Держатель для телефона на руль Venzo VZ20-F21T-006
@@ -222,13 +230,14 @@
          <span class="product-card__new-price">2 499 руб.</span>
         </div>
        </a>
-       <a class="catalog__content-card product-card" href="#!">
+       <a class="catalog__product-card product-card" href="#!">
         <img
          class="product-card__img"
          src="./src/images/catalog/product_5.jpg"
-         alt="Комплект фонарей BBB BLS"
+         alt="Велозамок OYYO"
          width="380"
-         height="250" />
+         height="250"
+         loading="lazy" />
         <h3 class="product-card__title">Велозамок OYYO</h3>
         <p class="product-card__text">
          Велозамок цепь OYYO СN01 - базовый элемент защиты велосипеда. Длина 90
@@ -244,7 +253,8 @@
          src="./src/images/catalog/product_6.jpg"
          alt="Комплект фонарей BBB BLS"
          width="380"
-         height="250" />
+         height="250"
+         loading="lazy" />
         <h3 class="product-card__title">Комплект фонарей BBB BLS</h3>
         <p class="product-card__text">
          BBB BLS-76- готовый комплект городских фонарей для Вашего велосипеда.
@@ -254,21 +264,24 @@
         </div>
        </a>
       </div>
-      <a class="catalog__link" href="#!" role="link" aria-disabled="true">
-       Перейти в каталог
-      </a>
+      <a class="catalog__link" href="catalog.html">Перейти в каталог</a>
      </div>
     </section>
    </main>
    <footer class="footer">
     <div class="footer__container">
-     <a class="footer__logo" role="link" aria-disabled="true">Вело-сити</a>
+     <a href="index.html" class="footer__logo" aria-current="page">Вело-сити</a>
      <div class="footer__wrap">
-      <nav class="footer__menu">
+      <nav class="footer__menu" aria-label="Меню в футере">
        <h2 class="footer__menu-title">Меню</h2>
        <ul class="footer__menu-list">
         <li class="footer__menu-item">
-         <a href="index.html" class="footer__menu-link footer__link">Главная</a>
+         <a
+          href="index.html"
+          class="footer__menu-link footer__link"
+          aria-current="page">
+          Главная
+         </a>
         </li>
         <li class="footer__menu-item">
          <a href="catalog.html" class="footer__menu-link footer__link">
@@ -282,7 +295,7 @@
       </nav>
       <div class="footer__contact">
        <h2 class="footer__contact-title">Контакты</h2>
-       <a class="footer__contact-tel footer__link" href="tel:+79115557070 ">
+       <a class="footer__contact-tel footer__link" href="tel:+79115557070">
         +7 911 555 70 70
        </a>
        <a class="footer__contact-mail footer__link" href="mailto:velo@city.com">
@@ -290,38 +303,44 @@
        </a>
        <ul class="footer__contact-social-list">
         <li class="footer__contact-item">
-         <a href="#!" class="footer__contact-link footer__link">
+         <a
+          href="#!"
+          class="footer__contact-link footer__link"
+          aria-label="Мы во ВКонтакте">
           <svg
-           role="img"
-           aria-label="vk link"
            class="footer__contact-ico"
            width="24"
-           height="20">
-           <use xlink:href="#icon-vk"></use>
+           height="20"
+           aria-hidden="true">
+           <use href="#icon-vk"></use>
           </svg>
          </a>
         </li>
         <li class="footer__contact-item">
-         <a href="#!" class="footer__contact-link footer__link">
+         <a
+          href="#!"
+          class="footer__contact-link footer__link"
+          aria-label="Мы вч\ twitter">
           <svg
-           role="img"
-           aria-label="twitter link"
            class="footer__contact-ico"
            width="24"
-           height="20">
-           <use xlink:href="#icon-twitter"></use>
+           height="20"
+           aria-hidden="true">
+           <use href="#icon-twitter"></use>
           </svg>
          </a>
         </li>
         <li class="footer__contact-item">
-         <a href="#!" class="footer__contact-link footer__link">
+         <a
+          href="#!"
+          class="footer__contact-link footer__link"
+          aria-label="Мы в telegram">
           <svg
-           role="img"
-           aria-label="telegram link"
            class="footer__contact-ico"
            width="24"
-           height="20">
-           <use xlink:href="#icon-telegram"></use>
+           height="20"
+           aria-hidden="true">
+           <use href="#icon-telegram"></use>
           </svg>
          </a>
         </li>

@@ -22,10 +22,10 @@ body {
 
  &.menu-active {
   overflow-y: hidden;
-  padding-right: 7px;
+  padding-right: rem(7);
 
   @include m {
-   padding-right: 4px;
+   padding-right: rem(4);
   }
  }
 
@@ -44,9 +44,9 @@ body {
  position: absolute !important;
  overflow: hidden !important;
  clip-path: inset(50%) !important;
- width: 1px !important;
- height: 1px !important;
- margin: -1px !important;
+ width: rem(1) !important;
+ height: rem(1) !important;
+ margin: rem(-1) !important;
  padding: 0 !important;
  white-space: nowrap !important;
  border: 0 !important;
@@ -57,11 +57,11 @@ body {
 
 /* Загальний стиль для всіх веб-кіт браузерів */
 ::-webkit-scrollbar {
- width: 7px;
- height: 4px; /* Ширина смужки прокрутки */
+ width: rem(7);
+ height: rem(4); /* Ширина смужки прокрутки */
 
  @include m {
-  width: 4px;
+  width: rem(4);
  }
 }
 
@@ -72,7 +72,7 @@ body {
 ::-webkit-scrollbar-thumb {
  background-color: var(--brand-color); /* Колір смужки прокрутки */
  border: none; /* Простір між смужкою і треком  */
- border-radius: 10px; /* Округлені краї смужки прокрутки */
+ border-radius: rem(10); /* Округлені краї смужки прокрутки */
 }
 
 // ::-webkit-scrollbar-thumb:hover {
@@ -81,5 +81,5 @@ body {
 
 /* 
 запобігти скачку контента при появі полоси прокрутки
-.body { padding: 0 calc(20px - (100vw - 100%)) 0 0; }
+.body { padding: 0 calc(rem(20) - (100vw - 100%)) 0 0; }
 */

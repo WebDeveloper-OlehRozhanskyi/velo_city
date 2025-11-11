@@ -5,16 +5,10 @@
 }
 
 @function fluid($min, $max, $minWidth, $maxWidth, $base: 16) {
- $min-rem: $min / $base * 1rem;
- $max-rem: $max / $base * 1rem;
- $slope: ($max - $min) / ($maxWidth - $minWidth) * 100;
- $intercept: ($min - ($slope * $minWidth / 100)) / $base;
+ $min-rem: math.div($min, $base) * 1rem;
+ $max-rem: math.div($max, $base) * 1rem;
+ $slope: math.div($max - $min, $maxWidth - $minWidth) * 100;
+ $intercept: math.div($min - math.div($slope * $minWidth, 100), $base);
 
  @return clamp(#{$min-rem}, #{$intercept}rem + #{$slope}vw, #{$max-rem});
 }
-
-/*
-@function vwc($n) {
-	@return calc($n $m * 100vw);
-}
-	*/

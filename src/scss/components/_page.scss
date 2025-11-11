@@ -18,16 +18,27 @@
 }
 
 .banner {
- &--home {
-  @include bg-image-set('@/images/background/banner/banner-bg', 'jpg');
- }
-
- height: 100vh;
  padding-top: rem(140);
  color: var(--white);
 
  @include bm {
   padding-top: rem(120);
+ }
+
+ &--home {
+  @include bg-image-set('@/images/background/banner/banner-bg', 'jpg');
+
+  min-height: 100vh;
+ }
+
+ &--catalog {
+  @include bg-image-set('@/images/background/banner/catalog-bg', 'jpg');
+
+  min-height: 400px;
+
+  @media (width > rem($viewport)) {
+   aspect-ratio: 1440 / 400;
+  }
  }
 
  // .banner__container
@@ -186,6 +197,13 @@
  // .catalog__container
  &__container {
   @include container;
+ }
+
+ // .catalog__header
+ &__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--gap-content);
  }
 
  // .catalog__content
